@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 33% 17%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 13%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 142 70% 45%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 28% 22%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 20% 25%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --sos: 0 100% 50%;
+    --sos-foreground: 0 0% 100%;
+
+    --border: 217 25% 27%;
+    --input: 217 25% 27%;
+    --ring: 142 70% 45%;
+
+    --radius: 0.85rem;
+
+    --gradient-adventure: linear-gradient(135deg, hsl(222 47% 11%), hsl(225 35% 8%));
+    --gradient-card: linear-gradient(145deg, hsl(217 33% 17% / 0.9), hsl(222 30% 14% / 0.8));
+    --gradient-sos: linear-gradient(135deg, hsl(0 100% 50%), hsl(15 100% 45%));
+    --shadow-glow: 0 0 25px hsl(142 70% 45% / 0.35);
+    --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  .theme-light {
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 20% 92%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 38 92% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
+    --ring: 142 76% 36%;
+
+    --gradient-adventure: linear-gradient(135deg, hsl(0 0% 98%), hsl(210 30% 94%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 20% 96%));
+    --shadow-glow: 0 0 20px hsl(142 76% 36% / 0.25);
+    --shadow-card: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .theme-high-contrast {
+    --background: 0 0% 0%;
+    --foreground: 60 100% 50%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 60 100% 50%;
+
+    --popover: 0 0% 0%;
+    --popover-foreground: 60 100% 50%;
+
+    --primary: 60 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 60 100% 50%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 60 90% 70%;
+
+    --accent: 180 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 60 100% 50%;
+    --input: 60 100% 50%;
+    --ring: 60 100% 50%;
+
+    --gradient-adventure: linear-gradient(135deg, #000000, #111111);
+    --gradient-card: linear-gradient(145deg, #050505, #151515);
+    --shadow-glow: 0 0 25px hsl(60 100% 50% / 0.7);
+    --shadow-card: 0 0 10px hsl(60 100% 50% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-none;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* High Accessibility Focus Indicators */
+  *:focus-visible {
+    @apply ring-2 ring-ring ring-offset-2 ring-offset-background outline-none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-adventure {
+    background: var(--gradient-adventure);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(12px);
+  }
+  
+  .gradient-sos {
+    background: var(--gradient-sos);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
